@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portofolio-kholik</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <!-- header -->
+    <header class="main-header bg-white shadow-md fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo Website -->
+            <div class="logo"></div>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="flex items-center gap-4">
+                    <li><a class="nav-link border p-2 rounded" href="#home">Home</a></li>
+                    <li><a class="nav-link border p-2 rounded" href="#profile">Profile</a></li>
+                    <li><a class="nav-link border p-2 rounded" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link border p-2 rounded" href="#message-us">Message Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <hr>
+    <!-- main -->
+     <!-- Welcome Modal -->
+    <div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20 hidden">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full mx-4 fade-in">
+            <h2 class="text-2xl font-bold mb-4">Welcome to My Portfolio!</h2>
+            <p class="mb-6">Please enter your name to personalize your experience:</p>
+            <input type="text" id="modalName" placeholder="Your name" class="border p-3 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="flex justify-end gap-3">
+                <button id="skipWelcome" class="px-4 py-2 text-gray-600 hover:text-gray-800">Skip</button>
+                <button id="submitWelcome" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button>
+            </div>
+        </div>
+    </div>
+    <main class="mt-20">
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-center gap-5 px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center">Welcome <span id="username" class="text-blue-500">Guest</span> to My Portfolio</h1>
+            <p class="text-lg md:text-xl text-gray-600 text-center max-w-2xl">I'm a passionate developer creating innovative digital solutions. Explore my work and get in touch!</p>
+            <button class="bg-blue-500 text-white px-6 py-3 rounded-lg mt-4 hover:bg-blue-600 transition-colors" onclick="scrollToSection('profile')">Learn More</button>
+        </section>
+
+        <hr class="my-10">
+
+        <!-- Profile Section -->
+        <section id="profile" class="min-h-screen flex flex-col justify-center items-center gap-8 px-4 py-10">
+            <h2 class="text-3xl font-bold">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 max-w-4xl">
+                <div class="w-48 h-48 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-6xl">👨‍💻</span>
+                </div>
+                <div class="max-w-xl">
+                    <p class="text-lg mb-4">Hello! I'm kholik</p>
+                    <p class="text-lg mb-4">When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.</p>
+                    <div class="flex gap-4 mt-6">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">HTML/CSS</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-10">
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="min-h-screen flex flex-col justify-center items-center gap-8 px-4 py-10">
+            <h2 class="text-3xl font-bold">My Work</h2>
+            <p class="text-lg text-gray-600 max-w-2xl text-center">Here are some of the projects I've worked on recently.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mt-6">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg shadow-md p-6">
+                    <div class="w-full h-40 bg-blue-100 rounded-md mb-4 flex items-center justify-center">
+                        <span class="text-4xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Website</h3>
+                    <p class="text-gray-600 mb-4">A responsive website built with HTML, CSS, and JavaScript.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">html</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">css</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">javascript</span>
+                    </div>
+                </div>
+        </section>
+
+        <hr class="my-10">
+
+        <!-- Message Us Section -->
+        <section id="message-us" class="min-h-screen flex flex-col justify-center items-center gap-8 px-4 py-10">
+            <h2 class="text-3xl font-bold">Get In Touch</h2>
+            <p class="text-lg text-gray-600 max-w-2xl text-center">Have a project in mind or want to collaborate? Send me a message!</p>
+            
+            <form class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+                <div class="mb-4">
+                    <label for="name" class="block mb-2 font-medium">Name:</label>
+                    <input type="text" id="name" name="name" class="border p-3 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <div id="name-error" class="text-red-500 text-sm mt-1 hidden">Please enter your name</div>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 font-medium">Email:</label>
+                    <input type="email" id="email" name="email" class="border p-3 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <div id="email-error" class="text-red-500 text-sm mt-1 hidden">Please enter a valid email address</div>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block mb-2 font-medium">Message:</label>
+                    <textarea id="message" name="message" class="border p-3 rounded w-full h-32 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    <div id="message-error" class="text-red-500 text-sm mt-1 hidden">Please enter your message</div>
+                </div>
+                <button type="button" onclick="validateForm()" class="bg-blue-500 text-white p-3 rounded w-full hover:bg-blue-600 transition-colors">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <hr>
+    <!-- footer -->
+    <footer>
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center">© 2025 kholik's Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
